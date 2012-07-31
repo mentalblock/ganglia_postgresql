@@ -5,13 +5,18 @@ the database to gather metrics for display in Ganglia.
 
 Various other Ganglia python modules were used as a reference for this work.
 
-More information on Ganglia python modules can be found [here](http://sourceforge.net/apps/trac/ganglia/wiki/ganglia_gmond_python_modules)
+More information on Ganglia python modules can be found [here](http://sourceforge.net/apps/trac/ganglia/wiki/ganglia_gmond_python_modules).
+
+## Installation
+* Copy `postgresql.pyconf` to `/etc/ganglia/conf.d/`. 
+* Copy `postgresql.py` to `/usr/lib64/ganglia/python_modules`
+* Configure the module.
+* Restart the gmond service.
 
 ## Configuration
 
 As with other Ganglia python modules, configuration is managed through the
-pyconf `postgresql.pyconf`. This file should be placed in
-`/etc/ganglia/conf.d/` and modified for your environment.
+pyconf `postgresql.pyconf`.
 
 ## Adding custom metrics
 
@@ -30,9 +35,9 @@ can use the included queries as a guideline for creating additional metrics.
 
 ## Debugging
 
-As with most Ganglia python modules, you can execute the `postgresql.py` from
-the command-line. Execute `postgresql.py -h` for help. The command-line
-invocation is very close to how gmond will utilize the module.
+As with most Ganglia python modules, you can execute `postgresql.py` from the
+command-line. Execute `postgresql.py -h` for help. The command-line invocation
+is very close to how gmond will utilize the module.
 
 ## Contact
 
