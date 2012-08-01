@@ -7,6 +7,11 @@ Various other Ganglia python modules were used as a reference for this work.
 
 More information on Ganglia python modules can be found [here](http://sourceforge.net/apps/trac/ganglia/wiki/ganglia_gmond_python_modules).
 
+## Requirements
+* The [psycopg2](http://www.initd.org/psycopg/) library. This is a PostgreSQL
+  adapter for Python. Your OS distribution may have a package available which
+  provides this adapter.
+
 ## Installation
 * Copy `postgresql.pyconf` to `/etc/ganglia/conf.d/`. 
 * Copy `postgresql.py` to `/usr/lib64/ganglia/python_modules`
