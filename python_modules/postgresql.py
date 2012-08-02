@@ -48,6 +48,7 @@ metric_defs = {
     },
     "pg_idx_blks_read": {
         "description": "Total index blocks read",
+        "slope": "positive",
         "value_type": "double",
         "format": "%.0f",
         "units": "blocks",
@@ -56,6 +57,7 @@ metric_defs = {
     },
     "pg_idx_blks_hit": {
         "description": "Total index blocks hit",
+        "slope": "positive",
         "value_type": "double",
         "format": "%.0f",
         "units": "blocks",
