@@ -13,10 +13,7 @@ metric_results = {}
 
 def metric_of(name):
     global metric_results
-    val = 0
-    if name in metric_results:
-        val = metric_results[name]
-    return val
+    return metric_results.get(name,0)
 
 # These are the defaults set for the metric attributes
 Desc_Skel = {
@@ -225,10 +222,7 @@ metric_defs = {
 }
 
 def print_exception(custom_msg, exception):
-    error_msg = "An error has occurred"
-    if custom_msg:
-        error_msg = custom_msg
-    
+    error_msg = custom_msg or "An error has occurred"
     print "%s %s" % (error_msg, exception),
     print "Code: %s, Message: %s" % (exception.pgcode, exception.pgerror)
 
@@ -279,19 +273,17 @@ class UpdateMetricThread(threading.Thread):
             print_exception("Could not connect to database", e)
             raise 
 
+        converter = {
+            'float': float,
+            'uint': int
+        }
+
         for metric_name, metric_attrs in metric_defs.iteritems():
             cur = conn.cursor()
             cur.execute(metric_attrs['query'])
             query_results = cur.fetchone()
-            val_type = metric_defs[metric_name].get('value_type')
-            if val_type == 'float':
-                metric_value = float(query_results[0])
-            elif val_type == 'uint':
-                metric_value = int(query_results[0])
-            else: 
-                metric_value = int(query_results[0])
-
-            metric_results[metric_name] = metric_value
+            convert_fn = converter.get(metric_defs[metric_name].get('value_type'), int)
+            metric_results[metric_name] = convert_fn(query_results[0])
             cur.close()
           
         conn.close()
@@ -308,12 +300,7 @@ def metric_init(params):
     return descriptors
 
 def create_desc(metric_name, skel, prop):
-    d = skel.copy()
-    d['name'] = metric_name
-    for k in skel:
-        if k in prop:
-            d[k] = prop[k] 
-    return d
+    return dict(skel.items() + [('name', metric_name)] + [(k, v) for k, v in prop.items() if k in skel])
 
 def metric_cleanup():
     _Worker_Thread.shutdown()
