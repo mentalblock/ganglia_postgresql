@@ -1,5 +1,7 @@
 ## PostgreSQL
 
+**This software does not work properly. This is a work in progress**
+
 This is the Ganglia python module for PostgreSQL. It executes queries against
 the database to gather metrics for display in Ganglia.
 
