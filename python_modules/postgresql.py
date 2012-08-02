@@ -49,8 +49,6 @@ metric_defs = {
     "pg_idx_blks_read": {
         "description": "Total index blocks read",
         "slope": "positive",
-        "value_type": "double",
-        "format": "%.0f",
         "units": "blocks",
         "query": "SELECT sum(idx_blks_read) AS idx_blks_read " + \
             "FROM pg_statio_all_indexes;"
@@ -58,8 +56,6 @@ metric_defs = {
     "pg_idx_blks_hit": {
         "description": "Total index blocks hit",
         "slope": "positive",
-        "value_type": "double",
-        "format": "%.0f",
         "units": "blocks",
         "query": "SELECT sum(idx_blks_hit) AS idx_blks_hit " + \
             "FROM pg_statio_all_indexes;"
