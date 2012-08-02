@@ -70,7 +70,7 @@ metric_defs = {
         "query": "SELECT count(*) FROM pg_locks;"
     },
     "pg_query_time_idle_in_txn": {
-        "description": 'Age of longest "idle in transaction" transaction',
+        "description": 'Age of longest _idle in transaction_ transaction',
         "units": "seconds",
         "query": "SELECT COALESCE(max(COALESCE(ROUND(EXTRACT(epoch " + \
             "FROM now()-query_start)),0)),0) AS " + \
