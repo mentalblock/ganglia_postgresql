@@ -20,8 +20,9 @@ More information on Ganglia python modules can be found [here](http://sourceforg
 
 ## Configuration
 
-As with other Ganglia python modules, configuration is managed through the
-pyconf `postgresql.pyconf`.
+Similar to other Ganglia python modules, configuration is managed through a
+configuration file in the pyconf directory `/etc/ganglia/conf.d/`. The file is
+`postgresql.pyconf`.
 
 ## Adding custom metrics
 
