@@ -37,7 +37,7 @@ can use the included queries as a guideline for creating additional metrics.
   will be improved upon as they are discovered.
 * This module was not thoroughly tested. More testing is in progress.
 
-[Found a bug?](http://github.com/bwong114/ganglia_postgresql/issues).
+[Found a bug?](http://github.com/bwong114/ganglia_postgresql/issues)
 
 ## Debugging
 
