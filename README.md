@@ -11,6 +11,7 @@ More information on Ganglia python modules can be found [here](http://sourceforg
 * The [psycopg2](http://www.initd.org/psycopg/) library. This is a PostgreSQL
   adapter for Python. Your OS distribution may have a package available which
   provides this adapter.
+* The [argparse](https://docs.python.org/dev/library/argparse.html#module-argparse) library. This parses command line options. Your OS distribution may have a package available which provides this library.
 
 ## Installation
 * Copy `postgresql.pyconf` to `/etc/ganglia/conf.d/`. 
