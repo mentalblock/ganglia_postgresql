@@ -1,3 +1,5 @@
+**Update**: This project is no longer maintained. I no longer work in an environment with PostgreSQL or Ganglia. It seems that updates are needed for this module to work with newer versions of PostgreSQL and I do not have the resources to test it. If you are interested in taking over this project, let me know and I will create a link to that project.
+
 ## PostgreSQL
 
 This is the Ganglia python module for PostgreSQL. It executes queries against
